@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is COULD? — Possibility is a Can</title>
+  <meta name="description" content="COULD — functional matcha yuzu lemonade. Ceremonial-grade Kagoshima matcha with L-Theanine. A calmer kind of energy. Join the list.">
+  <link rel="icon" href="assets/optimised/logo/could-isotype-anchor.svg">
+  <link rel="stylesheet" href="_ds/could-design-system-c6ac170e-2127-45c1-946b-7288945ed647/colors_and_type.css">
+  <link rel="stylesheet" href="could.css">
+
+  <!-- Klaviyo Onsite JavaScript SDK -->
+  <script type="text/javascript">
+    var _learnq = _learnq || [];
+    _learnq.push(['account', 'XyBJd6']);
+  </script>
+  <script type="text/javascript" async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XyBJd6"></script>
+
+  <style>
+    /* —— join-the-list capture —— */
+    .tasters { background: var(--bg-sky); }
+    .tasters-inner {
+      max-width: 720px; margin: 0 auto;
+      background: var(--could-off-white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 4vw, 56px);
+      text-align: center;
+    }
+    .tasters-inner .eyebrow { justify-content: center; }
+    .tasters-inner h2 { margin: 16px 0 0; }
+    .tasters-inner .lead { margin: 16px auto 0; }
+    .taster-form { margin-top: clamp(26px, 4vw, 36px); display: flex; flex-direction: column; gap: 12px; text-align: left; }
+    .taster-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .taster-field { display: flex; flex-direction: column; gap: 7px; }
+    .taster-field label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted); }
+    .taster-field input {
+      background: var(--bg-elevated); border: 1px solid var(--line); border-radius: var(--radius-pill);
+      padding: 14px 20px; font-family: var(--font-mono); font-size: 13px; color: var(--fg);
+    }
+    .taster-field input::placeholder { color: var(--fg-faint); }
+    .taster-field input:focus { outline: 2px solid var(--could-anchor-green); outline-offset: 1px; }
+    .taster-form .btn { margin-top: 6px; }
+    .taster-note { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-faint); text-align: center; margin: 14px 0 0; }
+    .taster-error { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--could-coral); text-align: center; margin: 12px 0 0; min-height: 14px; }
+    .taster-success { text-align: center; }
+    .taster-success .tick {
+      width: 56px; height: 56px; margin: 0 auto 18px; border-radius: 50%;
+      display: grid; place-items: center; background: var(--could-soft-green); color: var(--could-dark-green);
+    }
+    .taster-success .tick svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; fill: none; }
+    @media (max-width: 560px) { .taster-row { grid-template-columns: 1fr; } }
+
+    /* hero stats: three across now that "added sugar" is gone */
+    .hero2-stats .wrap { grid-template-columns: repeat(3, 1fr); }
+
+    /* —— tiny scroll cue (mobile only, no words) —— */
+    .scroll-cue { display: none; }
+    @keyframes scroll-cue-bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
+
+    /* ====== MOBILE-FIRST: compact the could page so the key sections come up fast ====== */
+    @media (max-width: 760px) {
+      .scroll-cue {
+        display: grid; place-items: center;
+        position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+        z-index: 35; width: 42px; height: 42px; border-radius: 50%;
+        background: var(--could-anchor-green); color: var(--could-off-white);
+        box-shadow: var(--shadow-3); opacity: 0.92;
+        transition: opacity 0.4s var(--ease-soft);
+        animation: scroll-cue-bounce 1.5s var(--ease-soft) infinite;
+      }
+      .scroll-cue svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .scroll-cue.is-hidden { opacity: 0; pointer-events: none; }
+
+      /* hero — shorter image + tighter copy so the next section bleeds in */
+      .hero2-bg { height: 42vw; min-height: 176px; }
+      .hero2 > .wrap { padding-block: 18px 16px; }
+      .hero2-copy .h-lg { font-size: clamp(32px, 11vw, 44px); }
+      .hero2-copy .lead { font-size: 14.5px; line-height: 1.5; margin-top: 14px !important; }
+      .hero-cta { margin-top: 16px !important; gap: 10px; }
+      /* numbers anchored to the top, labels to the bottom — so the row stays
+         balanced on every phone width even when a label wraps to two lines */
+      .hero2-stats .s { display: flex; flex-direction: column; padding: 12px 10px 14px 12px; }
+      .hero2-stats .s b { font-size: clamp(18px, 5.5vw, 23px); }
+      .hero2-stats .s span { margin-top: auto; padding-top: 8px; font-size: 9px; letter-spacing: 0.1em; line-height: 1.4; }
+
+      /* global section rhythm: less air between blocks */
+      .section { padding-block: 38px; }
+      .marquee__track span { padding: 12px 22px; font-size: clamp(17px, 5vw, 22px); }
+
+      /* what's in the can — compact, and let the ingredients bleed up */
+      #formula { padding-bottom: 30px; }
+      #formula .band { gap: 16px; margin-bottom: 24px !important; }
+      #formula .imgframe.r-43 { aspect-ratio: 16 / 10; }
+      #formula .band .h-lg { font-size: clamp(30px, 9vw, 40px); }
+      #formula .band .lead { font-size: 14.5px; line-height: 1.55; margin-top: 12px !important; }
+      .formula-grid .frow { padding: 20px 16px; gap: 10px; }
+      .formula-grid .frow .amt { font-size: clamp(30px, 9vw, 44px); }
+
+      /* join the list — tighter card */
+      #join { padding-block: 34px; }
+      .tasters-inner { padding: 26px 20px; }
+      .tasters-inner .lead { font-size: 14.5px; }
+      .taster-form { margin-top: 20px; }
+
+      .dark-moment { padding-block: 40px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .scroll-cue { animation: none; } }
+  </style>
+</head>
+<body class="paper">
+
+  <!-- ANNOUNCE -->
+  <div class="announce">
+    <div class="wrap">
+      <span class="a-side">Ed. 01 — Matcha Yuzu Lemonade</span>
+      <span class="a-mid">A functional drink, not an energy drink</span>
+      <a class="a-side" href="#join">Join the list →</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-shell">
+      <div class="wrap">
+        <button class="nav-toggle nav-ctas" aria-label="Menu" aria-expanded="false">
+          <span class="ico"><svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span>
+        </button>
+        <nav class="nav-links">
+          <a href="could.html">The Matcha</a>
+          <a href="https://tally.so/r/LZVMZ2">Stockist</a>
+        </nav>
+        <a class="brand" href="index.html" aria-label="COULD home">
+          <img src="assets/optimised/logo/could-wordmark-anchor.svg" alt="COULD">
+        </a>
+        <div class="nav-ctas">
+          <a class="txtlink" href="#join">Join the list <span>→</span></a>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="wrap" hidden>
+      <a href="could.html">The Matcha</a>
+      <a href="https://tally.so/r/LZVMZ2">Stockist</a>
+      <a href="#join">Join the list</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero2">
+    <div class="hero2-bg" style="background-image:url('assets/optimised/could-hero.webp')"></div>
+    <div class="hero2-scrim"></div>
+    <div class="wrap">
+      <div class="hero2-copy reveal">
+        <span class="eyebrow"><span class="dot"></span>Ed. 01 · Matcha Yuzu Lemonade</span>
+        <h1 class="display h-lg" style="margin:16px 0 0">A <span class="scribble">calmer</span><br>kind of <em>energy</em>.</h1>
+        <p class="lead" style="margin-top:20px"><b>Ceremonial-grade matcha, in motion.</b> Single-origin Kagoshima, whisked with L‑Theanine and a whisper of yuzu — lightly sparkling, quietly energising. The lift, without the crash.</p>
+        <div class="hero-cta" style="margin-top:28px">
+          <a class="btn btn--lg" href="#join">Join the list <span class="arr">→</span></a>
+          <a class="txtlink" href="#formula">What's in the can <span>→</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero2-stats reveal">
+      <div class="wrap">
+        <div class="s"><b>50<sub>mg</sub></b><span>Caffeine · ½ a coffee</span></div>
+        <div class="s"><b>250<sub>mg</sub></b><span>L‑Theanine</span></div>
+        <div class="s"><b>17<sub>kcal</sub></b><span>per 100ml</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Ceremonial grade</span><span>L‑Theanine</span><span>Lightly sparkling</span><span>No crash</span><span>Single-origin Kagoshima</span><span>Quietly energising</span>
+    </div>
+  </div>
+
+  <!-- FORMULA -->
+  <section class="section wrap" id="formula">
+    <div class="band reveal" style="margin-bottom:clamp(36px,5vw,64px)">
+      <div class="imgframe r-43"><img src="assets/optimised/could-formula.webp" alt="Ceremonial matcha, bamboo whisk, yuzu and tea leaves"></div>
+      <div>
+        <span class="eyebrow"><span class="dot"></span>What's in the can</span>
+        <h2 class="display h-lg" style="margin:14px 0 0">Three things,<br><em>in the right ratio.</em></h2>
+        <p class="lead muted" style="margin-top:18px">Not an energy drink — a <b style="color:var(--fg-strong)">functional</b> one. Just three things, in balance: <b style="color:var(--fg-strong)">ceremonial-grade Kagoshima matcha</b>, <b style="color:var(--fg-strong)">250&thinsp;mg of L‑Theanine</b> to keep you level, and <b style="color:var(--fg-strong)">50&thinsp;mg of caffeine</b> — half a coffee's worth. Nothing else. If it's in the can, it's on the can.</p>
+      </div>
+    </div>
+
+    <div class="formula-grid reveal">
+      <div class="frow">
+        <span class="idx">01 — Amino acid</span>
+        <span class="amt">250<sub>mg</sub></span>
+        <div>
+          <h4>L‑Theanine</h4>
+          <p>The amino acid that makes matcha feel unlike coffee. It smooths the caffeine curve into a long, level plateau — so the afternoon stays even.</p>
+          <span class="chip tag">Plateau</span>
+        </div>
+      </div>
+      <div class="frow">
+        <span class="idx">02 — From the leaf</span>
+        <span class="amt">50<sub>mg</sub></span>
+        <div>
+          <h4>Caffeine</h4>
+          <p>About half a coffee. Drawn from the matcha leaf itself — no synthetic anhydrous, no guarana, no taurine. Enough to lift, never enough to jitter.</p>
+          <span class="chip tag">Lift</span>
+        </div>
+      </div>
+      <div class="frow">
+        <span class="idx">03 — First harvest</span>
+        <span class="amt">Grade&nbsp;A</span>
+        <div>
+          <h4>Ceremonial Matcha</h4>
+          <p>Stone-ground Kagoshima from the first harvest — the leaf you can't get in a sachet. Lifted with 0.4% pressed yuzu. Tastes like a tea room.</p>
+          <span class="chip tag">Source</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN THE LIST — the centrepiece -->
+  <section class="section tasters" id="join">
+    <div class="wrap">
+      <div class="tasters-inner reveal">
+        <span class="eyebrow"><span class="dot"></span>Pre-launch · Find us first</span>
+        <h2 class="display h-md">Join the<br><em>list.</em></h2>
+        <p class="lead muted" style="max-width:48ch">Be the first to know when COULD appears next to you — a new studio, a quiet café, a market stall. Tell us where you are, and we'll come find you.</p>
+
+        <form class="taster-form" id="taster-form" autocomplete="on" novalidate>
+          <div class="taster-row">
+            <div class="taster-field">
+              <label for="t-name">Name</label>
+              <input id="t-name" name="name" required placeholder="First name">
+            </div>
+            <div class="taster-field">
+              <label for="t-postcode">Postcode</label>
+              <input id="t-postcode" name="postcode" required placeholder="N1 …" autocomplete="postal-code">
+            </div>
+          </div>
+          <div class="taster-field">
+            <label for="t-email">Email</label>
+            <input id="t-email" type="email" name="email" required placeholder="the email you actually read">
+          </div>
+          <button class="btn btn--lg btn--block" type="submit">Add me to the list <span class="arr">→</span></button>
+          <p class="taster-error" id="taster-error" role="alert"></p>
+          <p class="taster-note">No spam, no drip sequences — just a note when COULD is near.</p>
+        </form>
+      </div>
+
+      <!-- success -->
+      <div class="tasters-inner taster-success reveal" id="taster-success" hidden>
+        <div class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2 class="display h-md">You're on the list.</h2>
+        <p class="lead muted" style="max-width:44ch">Thank you — we'll be in touch the moment COULD turns up near <span id="t-area">you</span>. Until then, slow afternoons to you.</p>
+        <div style="margin-top:24px"><a class="btn btn--ghost" href="index.html">Back to start <span class="arr">→</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DARK MOMENT -->
+  <section class="section dark-moment">
+    <img class="bigmark" src="assets/optimised/logo/could-isotype-offwhite.svg" alt="">
+    <div class="wrap on-dark">
+      <span class="eyebrow"><span class="dot"></span>Press · Folk Magazine, Issue Four</span>
+      <blockquote class="reveal">Calm, collected, quietly <em>sparkling</em> — a can that tastes like time to yourself.</blockquote>
+      <cite>Possibility is a can.</cite>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="wrap grid">
+      <div class="brand-col">
+        <img src="assets/optimised/logo/could-wordmark-offwhite.svg" alt="COULD">
+        <p>Functional matcha, brewed in small batches in the UK. A calmer kind of energy. <em>Possibility is a can.</em></p>
+      </div>
+      <div><h5>Discover</h5><ul><li><a href="#formula">The Matcha</a></li><li><a href="#join">Join the list</a></li><li><a href="index.html">Start over</a></li></ul></div>
+      <div><h5>Trade</h5><ul><li><a href="https://tally.so/r/LZVMZ2">Become a stockist</a></li><li><a href="https://tally.so/r/LZVMZ2">Trade pricing</a></li><li><a href="https://tally.so/r/LZVMZ2">Trade enquiries</a></li></ul></div>
+      <div><h5>Support</h5><ul><li><a href="#">Contact</a></li><li><a href="#">Delivery</a></li><li><a href="#">FAQ</a></li><li><a href="#join">Join the list</a></li></ul></div>
+      <div class="fine"><span>© MMXXVI COULD Drinks Ltd · London</span><span>Possibility is a can</span></div>
+    </div>
+  </footer>
+
+  <!-- tiny scroll cue (mobile, no words) -->
+  <a class="scroll-cue" href="#formula" aria-label="Scroll for more">
+    <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+
+  <script src="site.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById("taster-form");
+      if (!form) return;
+
+      // Same Klaviyo account + list as the existing COULD site.
+      var KLAVIYO_LIST_ID = "Yqt3J8";
+      var errEl = document.getElementById("taster-error");
+
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function showSuccess(pc) {
+        if (pc) document.getElementById("t-area").textContent = pc;
+        form.setAttribute("hidden", "");
+        var ok = document.getElementById("taster-success");
+        ok.removeAttribute("hidden");
+        ok.classList.add("in");
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = (document.getElementById("t-name").value || "").trim();
+        var pc = (document.getElementById("t-postcode").value || "").trim().toUpperCase();
+        var email = (document.getElementById("t-email").value || "").trim();
+
+        if (errEl) errEl.textContent = "";
+
+        if (!email || !isValidEmail(email)) {
+          if (errEl) errEl.textContent = "Please enter a valid email address.";
+          document.getElementById("t-email").focus();
+          return;
+        }
+
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = "Adding…"; }
+
+        // 1) Identify the profile (first name + postcode as a custom property).
+        try {
+          if (window._learnq) {
+            window._learnq.push(['identify', {
+              '$email': email,
+              '$first_name': name,
+              'PostCode': pc
+            }]);
+          }
+        } catch (err) { /* SDK still loading — subscribe below still records the email */ }
+
+        // 2) Subscribe to the list via Klaviyo's hosted subscribe endpoint.
+        //    no-cors = fire-and-forget (same approach as the current site).
+        var fd = new FormData();
+        fd.append('g', KLAVIYO_LIST_ID);
+        fd.append('email', email);
+        fd.append('$fields', '$first_name,PostCode,$source');
+        fd.append('$first_name', name);
+        fd.append('PostCode', pc);
+        fd.append('$source', 'Could website — Join the list');
+
+        fetch('https://manage.kmail-lists.com/ajax/subscriptions/subscribe', {
+          method: 'POST',
+          body: fd,
+          mode: 'no-cors'
+        }).catch(function () { /* ignore — no-cors gives no readable response */ });
+
+        // 3) Track the signup event.
+        try {
+          if (window._learnq) {
+            window._learnq.push(['track', 'Joined the list', {
+              'email': email,
+              'source': 'Could website'
+            }]);
+          }
+        } catch (err) {}
+
+        // 4) Show the success state.
+        showSuccess(pc);
+      });
+    })();
+
+    // —— tiny scroll cue: fade it out after the first scroll ——
+    (function () {
+      var cue = document.querySelector('.scroll-cue');
+      if (!cue) return;
+      var hide = function () {
+        if (window.scrollY > 60) {
+          cue.classList.add('is-hidden');
+          window.removeEventListener('scroll', hide);
+        }
+      };
+      window.addEventListener('scroll', hide, { passive: true });
+    })();
+  </script>
+</body>
+</html>

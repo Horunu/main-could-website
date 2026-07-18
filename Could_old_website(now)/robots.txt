@@ -1,0 +1,18 @@
+# robots.txt for could Landing Page
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://drinkcould.co.uk/sitemap.xml
+
+# Disallow documentation folder (optional)
+Disallow: /docs/
+
+# Allow all assets
+Allow: /backdrops/
+Allow: /can images/
+Allow: /favicons/
+Allow: /fonts/
+Allow: /logo/
+

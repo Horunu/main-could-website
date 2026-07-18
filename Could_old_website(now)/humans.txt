@@ -1,0 +1,20 @@
+/* TEAM */
+
+Brand: could
+Product: Functional Matcha Latte
+Tagline: Possibility in a Can
+
+/* SITE */
+
+Standards: HTML5, CSS3, Vanilla JavaScript
+Components: Klaviyo Email Integration
+Software: Hand-coded with care
+Fonts: Figtree, Antarctican Mono
+Assets: WebP optimized images
+
+/* THANKS */
+
+Built with: Vanilla JS, CSS animations, modern web standards
+Performance: < 1MB total, 60fps animations, WCAG AA accessible
+Optimized for: Mobile-first, conversion, accessibility
+

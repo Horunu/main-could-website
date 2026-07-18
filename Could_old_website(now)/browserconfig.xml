@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square150x150logo src="favicons/ISOTYPE_blackwebp.webp"/>
+      <square310x310logo src="favicons/ISOTYPE_blackwebp.webp"/>
+      <TileColor>#F5F1E8</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>
+

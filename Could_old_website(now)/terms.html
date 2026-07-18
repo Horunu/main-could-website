@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consignment Terms for Could - Terms for business venues stocking Could products on consignment">
+    <title>Consignment Terms | could</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/webp" href="favicon.webp">
+    <link rel="icon" type="image/webp" sizes="192x192" href="favicons/ISOTYPE_blackwebp.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/ISOTYPE_blackwebp.webp">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#F5F1E8">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="fonts/Figtree/Figtree-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Antarctican/AntarcticanMono-Book.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="logo/LOGO VARIATION_anchor greenwebp.webp" as="image">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Terms Page Specific Styles */
+        body.terms-page {
+            background: #F9F6E8 url('backdrops/Natural Background_small.webp') center center / cover no-repeat fixed;
+        }
+        
+        /* More opaque overlay (50%) */
+        body.terms-page::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(249, 246, 232, 0.5);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .terms-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header with logo */
+        .terms-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 48px;
+            padding-top: 24px;
+        }
+        
+        .terms-header a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .terms-header a:hover {
+            transform: scale(1.05);
+        }
+        
+        .terms-logo {
+            height: 56px;
+            width: auto;
+        }
+        
+        /* Main content area - scrollable */
+        .terms-content {
+            flex: 1;
+            background: rgba(220, 220, 220, 0.35);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 40px 32px;
+            margin-bottom: 48px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.12),
+                0 8px 24px rgba(0, 0, 0, 0.08),
+                inset 0 1px 1px rgba(255, 255, 255, 0.5);
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+        }
+        
+        .terms-title {
+            font-family: 'Figtree', sans-serif;
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #000;
+        }
+        
+        .terms-subtitle {
+            font-family: 'Antarctican Mono', monospace;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        
+        .terms-body {
+            font-family: 'Antarctican Mono', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        
+        .terms-body h2 {
+            font-family: 'Figtree', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            color: #000;
+        }
+        
+        .terms-body h2:first-child {
+            margin-top: 0;
+        }
+        
+        .terms-body p {
+            margin-bottom: 16px;
+        }
+        
+        .terms-body ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+        
+        .terms-body li {
+            margin-bottom: 8px;
+        }
+        
+        /* Back to home link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Antarctican Mono', monospace;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+            margin-bottom: 32px;
+            transition: opacity 0.2s ease;
+        }
+        
+        .back-link:hover {
+            opacity: 0.6;
+        }
+        
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Desktop adjustments */
+        @media (min-width: 768px) {
+            .terms-container {
+                padding: 48px 64px;
+            }
+            
+            .terms-content {
+                padding: 56px 64px;
+                max-height: calc(100vh - 250px);
+            }
+            
+            .terms-body {
+                font-size: 15px;
+            }
+            
+            .terms-body h2 {
+                font-size: 22px;
+            }
+        }
+        
+        /* Custom scrollbar for terms content */
+        .terms-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .terms-content::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+        }
+        
+        .terms-content::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+        
+        .terms-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="terms-page">
+    <div class="terms-container">
+        <!-- Header with Logo -->
+        <header class="terms-header">
+            <a href="index.html" aria-label="Back to could homepage">
+                <img src="logo/LOGO VARIATION_anchor greenwebp.webp" alt="could" class="terms-logo">
+            </a>
+        </header>
+        
+        <!-- Back Link -->
+        <a href="index.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+        
+        <!-- Main Content -->
+        <main class="terms-content">
+            <h1 class="terms-title">Consignment Terms</h1>
+            <p class="terms-subtitle">Version 1.0 — Last updated: February 2026</p>
+            
+            <div class="terms-body">
+                <p>These terms apply to any business venue ("Venue", "you") that stocks <strong>Could</strong> products ("we", "us") on a consignment basis and accepts these terms by choosing the "I accept" option in our setup/order form (the "Setup Form") or otherwise confirming an order.</p>
+                
+                <h2>1) Definitions and acceptance</h2>
+                <ul>
+                    <li><strong>Stock</strong>: Could products delivered to the Venue.</li>
+                    <li><strong>Deal Terms</strong>: the commercial terms confirmed in the Setup Form (e.g., flavours, quantity, RRP, margin, payment timing).</li>
+                </ul>
+                <p>By accepting these terms, you confirm you're authorised to bind the Venue.</p>
+                <p>If these terms conflict with the Deal Terms, the <strong>Deal Terms win only for the commercial fields</strong>.</p>
+                
+                <h2>2) Consignment basics</h2>
+                <ul>
+                    <li>We deliver Stock for the Venue to sell to its customers.</li>
+                    <li><strong>Ownership stays with Could until a unit is sold</strong> to a customer.</li>
+                    <li>The Venue sells Stock as a retailer in its own name.</li>
+                </ul>
+                
+                <h2>3) Pricing and selling rules</h2>
+                <ul>
+                    <li>The Venue will sell at the <strong>RRP</strong> in the Deal Terms and will not discount/bundle Stock in a way that reduces the effective price, unless indicated otherwise in the Setup Form.</li>
+                    <li>The Venue keeps the <strong>margin</strong> in the Deal Terms; Could is owed the balance for units sold.</li>
+                    <li>No resale to third parties or online without our written approval.</li>
+                </ul>
+                
+                <h2>4) Storage, handling, and dates</h2>
+                <ul>
+                    <li>Stock must be stored <strong>chilled</strong> and handled with reasonable care, following label instructions.</li>
+                    <li>The Venue must not sell Stock after its best-before/expiry date.</li>
+                </ul>
+                
+                <h2>5) Loss, damage, and spoilage</h2>
+                <p>From delivery, the Venue is responsible for Stock that is <strong>lost, stolen, damaged, or spoiled due to improper storage/handling</strong>, except to the extent caused by our defect or delivery issue.</p>
+                
+                <h2>6) Reconciliation (how we count what sold)</h2>
+                <p>Unless we agree otherwise in writing:</p>
+                <ul>
+                    <li>At each restock/visit we may count remaining Stock on site.</li>
+                    <li><strong>Units sold = units delivered since the last count − units remaining.</strong></li>
+                    <li>The Venue will provide reasonable access to the Stock for counting during normal opening hours. If access is repeatedly refused, we may pause deliveries until resolved.</li>
+                </ul>
+                
+                <h2>7) Invoicing and payment</h2>
+                <ul>
+                    <li>After each reconciliation, we invoice for units sold (net of the Venue margin).</li>
+                    <li>Payment timing is per the Deal Terms (default <strong>Net 7 days</strong>).</li>
+                    <li>Late payment may incur statutory interest and recovery costs under the <strong>Late Payment of Commercial Debts (Interest) Act 1998</strong>.</li>
+                </ul>
+                
+                <h2>8) Unsold Stock, rotation, and expiry</h2>
+                <ul>
+                    <li>We may rotate Stock during restocks.</li>
+                    <li>We may (at our discretion) collect unsold <strong>saleable</strong> Stock if consignment ends.</li>
+                    <li>Stock is "saleable" only if unopened, undamaged, correctly stored, and within date. We do not credit/buy back Stock that is not saleable.</li>
+                </ul>
+                
+                <h2>9) Termination</h2>
+                <p>Either party can end consignment on <strong>7 days' notice</strong> by email. We may end immediately for material breach (including non-payment or repeated improper storage/handling).</p>
+                
+                <h2>10) Product issues and recalls</h2>
+                <ul>
+                    <li>We warrant Stock is produced and labelled in line with applicable UK food law.</li>
+                    <li>If there's a recall/safety notice, the Venue must stop selling immediately and follow instructions.</li>
+                </ul>
+                
+                <h2>11) Liability (simple cap)</h2>
+                <p>Nothing limits liability that cannot legally be limited (e.g., death/personal injury due to negligence, fraud).</p>
+                <p>Subject to that, Could's total liability is capped at <strong>the amount the Venue paid to Could in the 3 months before the event</strong>. We are not liable for indirect or consequential losses.</p>
+                
+                <h2>12) General</h2>
+                <ul>
+                    <li>No partnership/agency is created.</li>
+                    <li>Governing law and courts: <strong>England & Wales</strong>.</li>
+                    <li>We may update these terms by publishing a new version; new versions apply to Stock delivered after the update date.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

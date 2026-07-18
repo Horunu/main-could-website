@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is COULD? — Possibility is a Can</title>
+  <meta name="description" content="COULD — functional matcha yuzu lemonade. Ceremonial-grade Kagoshima matcha with L-Theanine. A calmer kind of energy. Join the early tasters list.">
+  <link rel="icon" href="assets/logo/could-isotype-anchor.svg">
+  <link rel="stylesheet" href="_ds/could-design-system-c6ac170e-2127-45c1-946b-7288945ed647/colors_and_type.css">
+  <link rel="stylesheet" href="could.css">
+  <style>
+    /* —— early tasters capture —— */
+    .tasters { background: var(--bg-sky); }
+    .tasters-inner {
+      max-width: 720px; margin: 0 auto;
+      background: var(--could-off-white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 4vw, 56px);
+      text-align: center;
+    }
+    .tasters-inner .eyebrow { justify-content: center; }
+    .tasters-inner h2 { margin: 16px 0 0; }
+    .tasters-inner .lead { margin: 16px auto 0; }
+    .taster-form { margin-top: clamp(26px, 4vw, 36px); display: flex; flex-direction: column; gap: 12px; text-align: left; }
+    .taster-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .taster-field { display: flex; flex-direction: column; gap: 7px; }
+    .taster-field label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted); }
+    .taster-field input {
+      background: var(--bg-elevated); border: 1px solid var(--line); border-radius: var(--radius-pill);
+      padding: 14px 20px; font-family: var(--font-mono); font-size: 13px; color: var(--fg);
+    }
+    .taster-field input::placeholder { color: var(--fg-faint); }
+    .taster-field input:focus { outline: 2px solid var(--could-anchor-green); outline-offset: 1px; }
+    .taster-form .btn { margin-top: 6px; }
+    .taster-note { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-faint); text-align: center; margin: 14px 0 0; }
+    .taster-success { text-align: center; }
+    .taster-success .tick {
+      width: 56px; height: 56px; margin: 0 auto 18px; border-radius: 50%;
+      display: grid; place-items: center; background: var(--could-soft-green); color: var(--could-dark-green);
+    }
+    .taster-success .tick svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; fill: none; }
+    @media (max-width: 560px) { .taster-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="paper">
+
+  <!-- ANNOUNCE -->
+  <div class="announce">
+    <div class="wrap">
+      <span class="a-side">Ed. 01 — Matcha Yuzu Lemonade</span>
+      <span class="a-mid">A functional drink, not an energy drink</span>
+      <a class="a-side" href="#tasters">Join the early tasters list →</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-shell">
+      <div class="wrap">
+        <button class="nav-toggle nav-ctas" aria-label="Menu" aria-expanded="false">
+          <span class="ico"><svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span>
+        </button>
+        <nav class="nav-links">
+          <a href="#formula">The Matcha</a>
+          <a href="#moments">Moments</a>
+          <a href="#tasters">Early tasters</a>
+          <a href="wholesale.html">Wholesale</a>
+        </nav>
+        <a class="brand" href="teaser.html" aria-label="COULD home">
+          <img src="assets/logo/could-wordmark-anchor.svg" alt="COULD">
+        </a>
+        <div class="nav-ctas">
+          <a class="txtlink" href="#tasters">Join the list <span>→</span></a>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="wrap" hidden>
+      <a href="#formula">The Matcha</a>
+      <a href="#moments">Moments</a>
+      <a href="#tasters">Early tasters</a>
+      <a href="wholesale.html">Wholesale</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero2">
+    <div class="hero2-bg" style="background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_34Hf6ANVptLaUY50nvyQlqLPOTI/hf_20260620_223132_71cfe1e9-d921-4fd1-ab9b-e1dcb304c3fe.png')"></div>
+    <div class="hero2-scrim"></div>
+    <div class="wrap">
+      <div class="hero2-copy reveal">
+        <span class="eyebrow"><span class="dot"></span>Ed. 01 · Matcha Yuzu Lemonade</span>
+        <h1 class="display h-lg" style="margin:16px 0 0">A <span class="scribble">calmer</span><br>kind of <em>energy</em>.</h1>
+        <p class="lead" style="margin-top:20px"><b>Ceremonial-grade matcha, in motion.</b> Single-origin Kagoshima, whisked with L‑Theanine and a whisper of yuzu — lightly sparkling, quietly energising. The lift, without the crash.</p>
+        <div class="hero-cta" style="margin-top:28px">
+          <a class="btn btn--lg" href="#tasters">Join the early tasters <span class="arr">→</span></a>
+          <a class="txtlink" href="#formula">What's in the can <span>→</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero2-stats reveal">
+      <div class="wrap">
+        <div class="s"><b>50<sub>mg</sub></b><span>Caffeine · ½ a coffee</span></div>
+        <div class="s"><b>100<sub>mg</sub></b><span>L‑Theanine</span></div>
+        <div class="s"><b>17<sub>kcal</sub></b><span>per 100ml</span></div>
+        <div class="s"><b>0<sub>g</sub></b><span>Added sugar</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Ceremonial grade</span><span>L‑Theanine</span><span>Lightly sparkling</span><span>No crash</span><span>Single-origin Kagoshima</span><span>Quietly energising</span>
+    </div>
+  </div>
+
+  <!-- FORMULA -->
+  <section class="section wrap" id="formula">
+    <div class="band reveal" style="margin-bottom:clamp(36px,5vw,64px)">
+      <div class="imgframe r-43"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_34Hf6ANVptLaUY50nvyQlqLPOTI/hf_20260620_223137_6e9d164e-7403-4629-a330-9cdf196ef259.png" alt="Ceremonial matcha, bamboo whisk, yuzu and tea leaves"></div>
+      <div>
+        <span class="eyebrow"><span class="dot"></span>What's in the can</span>
+        <h2 class="display h-lg" style="margin:14px 0 0">Three things,<br><em>in the right ratio.</em></h2>
+        <p class="lead muted" style="margin-top:18px">Not an energy drink. A <b style="color:var(--fg-strong)">functional</b> one — small, considered, honest. Ceremonial Kagoshima matcha, the amino acid that keeps you level, and half a coffee's caffeine. If it's in the can, it's on the can.</p>
+      </div>
+    </div>
+
+    <div class="formula-grid reveal">
+      <div class="frow">
+        <span class="idx">01 — Amino acid</span>
+        <span class="amt">100<sub>mg</sub></span>
+        <div>
+          <h4>L‑Theanine</h4>
+          <p>The amino acid that makes matcha feel unlike coffee. It smooths the caffeine curve into a long, level plateau — so the afternoon stays even.</p>
+          <span class="chip tag">Plateau</span>
+        </div>
+      </div>
+      <div class="frow">
+        <span class="idx">02 — From the leaf</span>
+        <span class="amt">50<sub>mg</sub></span>
+        <div>
+          <h4>Caffeine</h4>
+          <p>About half a coffee. Drawn from the matcha leaf itself — no synthetic anhydrous, no guarana, no taurine. Enough to lift, never enough to jitter.</p>
+          <span class="chip tag">Lift</span>
+        </div>
+      </div>
+      <div class="frow">
+        <span class="idx">03 — First harvest</span>
+        <span class="amt">Grade&nbsp;A</span>
+        <div>
+          <h4>Ceremonial Matcha</h4>
+          <p>Stone-ground Kagoshima from the first harvest — the leaf you can't get in a sachet. Lifted with 0.4% pressed yuzu. Tastes like a tea room.</p>
+          <span class="chip tag">Source</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARLY TASTERS — the centrepiece -->
+  <section class="section tasters" id="tasters">
+    <div class="wrap">
+      <div class="tasters-inner reveal">
+        <span class="eyebrow"><span class="dot"></span>Pre-launch · Find us first</span>
+        <h2 class="display h-md">Join the early<br><em>tasters list.</em></h2>
+        <p class="lead muted" style="max-width:48ch">Be the first to know when COULD appears next to you — a new studio, a quiet café, a market stall. Tell us where you are, and we'll come find you.</p>
+
+        <form class="taster-form" id="taster-form" autocomplete="on">
+          <div class="taster-row">
+            <div class="taster-field">
+              <label for="t-name">Name</label>
+              <input id="t-name" name="name" required placeholder="First name">
+            </div>
+            <div class="taster-field">
+              <label for="t-postcode">Postcode</label>
+              <input id="t-postcode" name="postcode" required placeholder="N1 …" autocomplete="postal-code">
+            </div>
+          </div>
+          <div class="taster-field">
+            <label for="t-email">Email</label>
+            <input id="t-email" type="email" name="email" required placeholder="the email you actually read">
+          </div>
+          <button class="btn btn--lg btn--block" type="submit">Add me to the list <span class="arr">→</span></button>
+          <p class="taster-note">No spam, no drip sequences — just a note when COULD is near.</p>
+        </form>
+      </div>
+
+      <!-- success -->
+      <div class="tasters-inner taster-success reveal" id="taster-success" hidden>
+        <div class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2 class="display h-md">You're on the list.</h2>
+        <p class="lead muted" style="max-width:44ch">Thank you — we'll be in touch the moment COULD turns up near <span id="t-area">you</span>. Until then, slow afternoons to you.</p>
+        <div style="margin-top:24px"><a class="btn btn--ghost" href="teaser.html">Back to start <span class="arr">→</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOMENTS -->
+  <section class="section wrap" id="moments">
+    <div class="sec-head sec-head--center">
+      <span class="eyebrow"><span class="sectnum">§02</span> · Eight quiet hours</span>
+      <h2 class="display h-lg">Whenever the day asks<br><em>a little more of you.</em></h2>
+      <p class="lead muted center" style="max-width:54ch">From the first slow hour to the long way home — the moments a can does its quiet work.</p>
+    </div>
+    <div class="moments-grid reveal">
+      <div class="moment is-soft"><img src="assets/illustrations/morning-ritual.svg" alt="Morning ritual"><span class="m-name">Morning ritual</span><span class="m-cap">07:00 · before the inbox</span></div>
+      <div class="moment"><img src="assets/illustrations/me-time-pause.svg" alt="Me-time pause"><span class="m-name">Me-time pause</span><span class="m-cap">11:00 · the room alone</span></div>
+      <div class="moment is-sky"><img src="assets/illustrations/active-flow.svg" alt="Active flow"><span class="m-name">Active flow</span><span class="m-cap">12:30 · the Z2 zone</span></div>
+      <div class="moment"><img src="assets/illustrations/mindful-balance.svg" alt="Mindful balance"><span class="m-name">Mindful balance</span><span class="m-cap">16:00 · the reset</span></div>
+      <div class="moment"><img src="assets/illustrations/on-the-move.svg" alt="On the move"><span class="m-name">On the move</span><span class="m-cap">15:30 · the commute</span></div>
+      <div class="moment is-blush"><img src="assets/illustrations/picnic.svg" alt="Picnic"><span class="m-name">Picnic</span><span class="m-cap">17:00 · the park</span></div>
+      <div class="moment"><img src="assets/illustrations/elegant-table.svg" alt="Elegant table"><span class="m-name">Elegant table</span><span class="m-cap">19:00 · the friends</span></div>
+      <div class="moment"><img src="assets/illustrations/post-workout-refresh.svg" alt="Post-workout refresh"><span class="m-name">Post-workout</span><span class="m-cap">20:00 · the recovery</span></div>
+    </div>
+  </section>
+
+  <!-- DARK MOMENT -->
+  <section class="section dark-moment">
+    <img class="bigmark" src="assets/logo/could-isotype-offwhite.svg" alt="">
+    <div class="wrap on-dark">
+      <span class="eyebrow"><span class="dot"></span>Press · Folk Magazine, Issue Four</span>
+      <blockquote class="reveal">Calm, collected, quietly <em>sparkling</em> — a can that tastes like time to yourself.</blockquote>
+      <cite>Possibility is a can.</cite>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="wrap grid">
+      <div class="brand-col">
+        <img src="assets/logo/could-wordmark-offwhite.svg" alt="COULD">
+        <p>Functional matcha, brewed in small batches in the UK. A calmer kind of energy. <em>Possibility is a can.</em></p>
+      </div>
+      <div><h5>Discover</h5><ul><li><a href="#formula">The Matcha</a></li><li><a href="#moments">Moments</a></li><li><a href="#tasters">Early tasters</a></li><li><a href="teaser.html">Start over</a></li></ul></div>
+      <div><h5>Trade</h5><ul><li><a href="wholesale.html">Stock COULD</a></li><li><a href="wholesale.html">Trade pricing</a></li><li><a href="wholesale.html">Trade enquiries</a></li></ul></div>
+      <div><h5>Support</h5><ul><li><a href="#">Contact</a></li><li><a href="#">Delivery</a></li><li><a href="#">FAQ</a></li><li><a href="#tasters">Early tasters</a></li></ul></div>
+      <div class="fine"><span>© MMXXVI COULD Drinks Ltd · London</span><span>Possibility is a can</span></div>
+    </div>
+  </footer>
+
+  <div id="tweaks-root"></div>
+
+  <script src="site.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById("taster-form");
+      if (!form) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var pc = (document.getElementById("t-postcode").value || "").trim().toUpperCase();
+        if (pc) document.getElementById("t-area").textContent = pc;
+        form.setAttribute("hidden", "");
+        var ok = document.getElementById("taster-success");
+        ok.removeAttribute("hidden");
+        ok.classList.add("in");
+      });
+    })();
+  </script>
+  <script>window.COULD_PAGE = "could";</script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="could-tweaks.jsx"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* ============================================================
+   COULD — Colors, Type & Foundation Tokens
+   Brand: COULD · Possibility is a Can
+   ----------------------------------------------------------- */
+
+/* —— FONTS ————————————————————————————————————— */
+/* Display + UI: Figtree (the closest open-source match to COULD's
+   custom geometric wordmark, used here for labels, buttons, UI).
+   Mono / Editorial: Antarctican Mono — used for body, captions,
+   product copy, ingredient lists. Gives the "field notes" feel
+   that runs through COULD's Instagram and packaging. */
+
+@font-face {
+  font-family: "Figtree";
+  src: url("fonts/Figtree-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("fonts/Figtree-Italic-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Antarctican Mono";
+  src: url("fonts/AntarcticanMono-Book.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Antarctican Mono";
+  src: url("fonts/AntarcticanMono-BookItalic.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Antarctican Mono";
+  src: url("fonts/AntarcticanMono-Medium.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Antarctican Mono";
+  src: url("fonts/AntarcticanMono-MediumItalic.woff2") format("woff2");
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Antarctican Mono";
+  src: url("fonts/AntarcticanMono-SemiBold.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Antarctican Mono";
+  src: url("fonts/AntarcticanMono-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Antarctican Mono";
+  src: url("fonts/AntarcticanMono-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Antarctican Mono";
+  src: url("fonts/AntarcticanMono-BoldItalic.woff2") format("woff2");
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
+/* —— COLOR SYSTEM ——————————————————————————————— */
+/* Sampled from the official COULD isotype PNGs (the brand's
+   "ISOTYPE_<color>.png" set). The system pairs anchored, organic
+   greens with one warm pop (coral) and three pastel "flavour"
+   tones (lime, light blue, pale blue). Off-white is the canonical
+   background; anchor green is the canonical foreground. */
+
+:root {
+  /* Brand palette — official */
+  --could-anchor-green: #445521;   /* primary ink, packaging body */
+  --could-dark-green:   #2E3119;   /* deepest type, near-black */
+  --could-soft-green:   #A0A66C;   /* secondary green, supporting */
+  --could-lime:         #CCC10B;   /* yuzu / lemonade accent */
+  --could-coral:        #F39E80;   /* warmth / single pop */
+  --could-light-blue:   #D0DEE4;   /* pastel — cool wash */
+  --could-pale-blue:    #A7C0E5;   /* pastel — deeper sky */
+  --could-off-white:    #F8F5E7;   /* canonical background, cream */
+  --could-white:        #FFFFFF;
+  --could-black:        #101410;   /* used very rarely; prefer dark-green */
+
+  /* Surfaces */
+  --bg:          var(--could-off-white);
+  --bg-elevated: #FCFAF0;          /* a hair brighter than off-white */
+  --bg-inverse:  var(--could-anchor-green);
+  --bg-deep:     var(--could-dark-green);
+  --bg-sky:      var(--could-light-blue);
+  --bg-blush:    #F7DBCE;          /* lighter coral wash */
+
+  /* Foreground / type */
+  --fg:          var(--could-anchor-green); /* default ink */
+  --fg-strong:   var(--could-dark-green);
+  --fg-muted:    rgba(46, 49, 25, 0.62);
+  --fg-faint:    rgba(46, 49, 25, 0.38);
+  --fg-inverse:  var(--could-off-white);
+
+  /* Lines & dividers */
+  --line:        rgba(46, 49, 25, 0.18);
+  --line-strong: rgba(46, 49, 25, 0.32);
+  --line-faint:  rgba(46, 49, 25, 0.10);
+  --line-inverse:rgba(248, 245, 231, 0.22);
+
+  /* Semantic (used sparingly — COULD is a calm brand) */
+  --accent:      var(--could-coral);
+  --accent-cool: var(--could-pale-blue);
+  --accent-warm: var(--could-lime);
+
+  /* —— TYPE FAMILIES ————————————————————————— */
+  --font-display: "Figtree", "Avenir Next", "Helvetica Neue", system-ui, sans-serif;
+  --font-ui:      "Figtree", "Avenir Next", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono:    "Antarctican Mono", "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Scale — tuned for editorial / packaging-led layouts */
+  --fs-hero:    96px;   /* full-bleed wordmarks, magazine covers */
+  --fs-display: 64px;   /* section opens */
+  --fs-h1:      44px;
+  --fs-h2:      32px;
+  --fs-h3:      22px;
+  --fs-h4:      18px;
+  --fs-body:    16px;
+  --fs-small:   13px;
+  --fs-caption: 11px;   /* mono labels, tags, eyebrows */
+
+  /* Line height */
+  --lh-tight:   1.05;
+  --lh-snug:    1.18;
+  --lh-normal:  1.45;
+  --lh-loose:   1.7;
+
+  /* Letter spacing */
+  --ls-wide-xl: 0.32em;  /* eyebrows like "POSSIBILITY  IS  A  CAN" */
+  --ls-wide:    0.14em;
+  --ls-tight:   -0.02em; /* large display only */
+
+  /* —— SPACING ————————————————————————————— */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* —— RADII ————————————————————————————— */
+  /* COULD's vocabulary is rounded but not bubbly. Pills for chips,
+     soft radii for cards, full radius for buttons. */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* —— ELEVATION ————————————————————————— */
+  /* Almost flat. Shadows are warm, low-opacity, never blueish. */
+  --shadow-1: 0 1px 0 rgba(46, 49, 25, 0.06);
+  --shadow-2: 0 2px 8px rgba(46, 49, 25, 0.06), 0 1px 2px rgba(46, 49, 25, 0.04);
+  --shadow-3: 0 12px 28px rgba(46, 49, 25, 0.08), 0 4px 10px rgba(46, 49, 25, 0.04);
+  --shadow-press: inset 0 1px 0 rgba(46, 49, 25, 0.10);
+
+  /* —— MOTION ————————————————————————————— */
+  --ease-out:  cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-soft: cubic-bezier(0.32, 0.72, 0.24, 1);
+  --dur-fast:  140ms;
+  --dur:       220ms;
+  --dur-slow:  420ms;
+}
+
+/* —— SEMANTIC TYPE STYLES ——————————————————————— */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.c-hero,
+.c-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-tight);
+  color: var(--fg);
+  text-transform: uppercase;
+}
+.c-hero    { font-size: var(--fs-hero); }
+.c-display { font-size: var(--fs-display); }
+
+.c-h1 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h1); line-height: var(--lh-snug); letter-spacing: -0.01em; text-transform: uppercase; }
+.c-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h2); line-height: var(--lh-snug); letter-spacing: 0;           text-transform: uppercase; }
+.c-h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h3); line-height: var(--lh-snug); }
+.c-h4 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h4); line-height: var(--lh-snug); }
+
+.c-eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-wide-xl);
+  text-transform: uppercase;
+  color: var(--fg);
+}
+.c-label {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.c-body  { font-family: var(--font-mono); font-weight: 400; font-size: var(--fs-body);  line-height: var(--lh-normal); }
+.c-lead  { font-family: var(--font-mono); font-weight: 400; font-size: 18px;            line-height: var(--lh-loose);  }
+.c-small { font-family: var(--font-mono); font-weight: 400; font-size: var(--fs-small); line-height: var(--lh-normal); }
+.c-caption {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-caption);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* Light-on-dark variants for use on anchor-green / dark-green surfaces */
+.on-dark { color: var(--fg-inverse); }
+.on-dark .c-eyebrow,
+.on-dark .c-label,
+.on-dark .c-caption { color: var(--fg-inverse); }

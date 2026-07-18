@@ -1,0 +1,38 @@
+# Netlify Headers Configuration for could Landing Page
+
+# Global headers for all pages
+/*
+  # Security Headers
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  
+  # Cache Control (1 hour for HTML)
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Static assets - long cache
+/backdrops/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/can images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/logo/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicons/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Favicon
+/favicon.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML - short cache for updates
+/index.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
