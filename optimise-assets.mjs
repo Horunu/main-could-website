@@ -1,8 +1,8 @@
 // optimise-assets.mjs
-// Batch-optimise could_live_website/assets:
+// Batch-optimise assets/:
 //   .jpg/.jpeg/.png -> .webp (quality 82) via sharp
 //   .svg            -> svgo (preset-default)
-// Outputs to could_live_website/assets/optimised/, preserving subfolder structure.
+// Outputs to assets/optimised/, preserving subfolder structure.
 // Originals are never touched.
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
@@ -11,7 +11,7 @@ import sharp from 'sharp';
 import { optimize } from 'svgo';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ASSETS = path.join(__dirname, 'could_live_website', 'assets');
+const ASSETS = path.join(__dirname, 'assets');
 const OUT = path.join(ASSETS, 'optimised');
 const QUALITY = 82;
 

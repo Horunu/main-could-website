@@ -4,7 +4,7 @@
     {
       "name": "could-live",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8137", "--directory", "Could_live_website"],
+      "runtimeArgs": ["-m", "http.server", "8137", "--directory", "."],
       "port": 8137
     }
   ]
