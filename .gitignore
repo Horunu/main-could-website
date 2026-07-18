@@ -1,4 +1,9 @@
 node_modules/
+
+# Working notes, drafts, scratch docs. Never committed, never deployed
+# (deploy.sh excludes it too).
+_notes/
+
 .DS_Store
 **/.DS_Store
 *.log

@@ -84,6 +84,7 @@ FILTERS=(
   # repo/tooling, not website content
   --exclude='/.git/'
   --exclude='/.gitignore'
+  --exclude='/_notes/'
   --exclude='/.claude/'
   --exclude='/node_modules/'
   --exclude='/archive/'
