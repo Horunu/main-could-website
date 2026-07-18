@@ -67,6 +67,16 @@ FILTERS=(
   --exclude='/.well-known/'
   --exclude='/.htaccess'
 
+  # Empty directories that exist only on the server. git cannot track empty
+  # dirs, so without these a deploy from a fresh clone would delete them.
+  # cgi-bin is cPanel-standard; the other two are harmless but not ours to bin.
+  --filter='P /nicky/'
+  --filter='P /old-website/docs/'
+  --filter='P /old-website/cgi-bin/'
+  --exclude='/nicky/'
+  --exclude='/old-website/docs/'
+  --exclude='/old-website/cgi-bin/'
+
   # build output ships; the raw sources it's generated from do not
   --include='/assets/optimised/***'
   --exclude='/assets/*'
